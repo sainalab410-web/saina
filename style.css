@@ -1,0 +1,286 @@
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #1a1a2e, #162447, #e43f5a, #f7f7ff);
+    background-size: 400% 400%;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: gradientShift 20s ease infinite;
+}
+
+/* Animation fond multicolore sombre/clair */
+@keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    border: 3px solid #ffffff; /* bordure visible */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    margin: 20px auto;
+    max-width: 1000px;
+    background: rgba(0,0,0,0.4);
+    animation: fadeInDown 2s ease forwards;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    animation: neonGlow 1.5s infinite alternate;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff4e50, 0 0 15px #f7f7ff;
+}
+
+/* Menu */
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+header ul li a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #fff;
+    transition: width 0.3s;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+header ul li a:hover::after {
+    width: 100%;
+}
+
+header ul li a:hover {
+    background: linear-gradient(45deg, #1a1a2e, #f7f7ff, #162447, #e43f5a);
+    background-size: 400% 400%;
+    animation: buttonGlow 3s ease infinite;
+    transform: scale(1.1);
+}
+
+/* Animation glow bouton menu */
+@keyframes buttonGlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Main (À propos) */
+main {
+    flex: 1;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    border: 3px solid #ffffff; /* bordure visible */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    margin: 20px auto;
+    max-width: 1000px;
+    background: rgba(0,0,0,0.4);
+    animation: fadeInUp 2s ease forwards;
+}
+
+main p {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(0,0,0,0.3);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(255,255,255,0.2);
+}
+
+/* Footer (Contacts) */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border: 3px solid #ffffff; /* bordure visible */
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.4);
+    animation: fadeInUp 2s ease forwards;
+}
+
+/* Animations générales */
+@keyframes fadeInDown {
+    0% {opacity: 0; transform: translateY(-50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+/* Animation titre néon */
+@keyframes neonGlow {
+    from {text-shadow: 0 0 5px #fff, 0 0 10px #ff4e50, 0 0 15px #f7f7ff;}
+    to {text-shadow: 0 0 10px #fff, 0 0 20px #ff4e50, 0 0 25px #f7f7ff;}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+    main p {
+        padding: 20px;
+    }
+}
+/* Section À propos */
+#apropos {
+    text-align: center;
+    font-size: 2em;
+    margin: 40px auto 20px auto;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff4e50;
+    animation: fadeInDown 2s ease forwards;
+}
+
+/* Texte de la section */
+#apropos + p {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 3px solid #ffffff; /* bordure visible */
+    border-radius: 20px;
+    background: rgba(0,0,0,0.4); /* fond semi-transparent */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: #f7f7ff;
+    animation: fadeInUp 2s ease forwards;
+}
+
+/* Animations générales */
+@keyframes fadeInDown {
+    0% {opacity: 0; transform: translateY(-50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+/* Section Contact */
+#contact {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 3px solid #ffffff; /* bordure visible */
+    border-radius: 20px;
+    background: rgba(0,0,0,0.4); /* fond semi-transparent */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    animation: fadeInUp 2s ease forwards;
+}
+
+/* Titre de la section */
+#contact h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff4e50;
+    margin-bottom: 20px;
+    animation: fadeInDown 2s ease forwards;
+}
+
+/* Texte descriptif */
+#contact p {
+    text-align: center;
+    color: #f7f7ff;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Formulaire */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact input, #contact textarea {
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+#contact input:focus, #contact textarea:focus {
+    border-color: #ffea00;
+    background: rgba(255,255,255,0.2);
+    outline: none;
+}
+
+#contact button {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #1a1a2e, #f7f7ff, #162447, #e43f5a);
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+#contact button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255,255,255,0.5);
+}
+
+/* Animations générales */
+@keyframes fadeInDown {
+    0% {opacity: 0; transform: translateY(-50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(50px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contact {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
+
